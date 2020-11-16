@@ -5,7 +5,7 @@ from rest_framework.schemas import get_schema_view
 from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="siteapp/index.html")),
+    path('', TemplateView.as_view(template_name="index.html")),
     path('auth/', include('drf_social_oauth2.urls', namespace='drf')),
     path('admin/', admin.site.urls),
     path('api/',include('siteapp_api.urls')),
