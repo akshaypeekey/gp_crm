@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 const facebookLogin = (accesstoken) => {
 	console.log(accesstoken);
 	axios
-		.post('http://127.0.0.1:8000/auth/convert-token', {
+		.post('https://simplecrm.pythonanywhere.com/auth/convert-token', {
 			token: accesstoken,
 			backend: 'facebook',
 			grant_type: 'convert_token',
@@ -15,7 +15,7 @@ const facebookLogin = (accesstoken) => {
 		.then((res) => {
 			localStorage.setItem('access_token', res.data.access_token);
 			localStorage.setItem('refresh_token', res.data.refresh_token);
-			window.location.href="http://localhost:3000/"
+			window.location.href="https://simplecrm.pythonanywhere.com/"
 		});
 };
 
